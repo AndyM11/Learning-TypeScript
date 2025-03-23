@@ -241,6 +241,7 @@
 //  POO
 class Personaje {
     profesion?: string // ? opcional
+    private static equipo: number = 1
     constructor(
         public readonly id: number,
         public name: string,
@@ -253,6 +254,10 @@ class Personaje {
         return this.level;
     }
 
+    static aggregarPersonaje(): void {
+        Personaje.equipo++;
+    }
+
     cambiarHP(cantidad: number): number {
         this._hp += cantidad;
         // no pasar del maximo
@@ -263,8 +268,16 @@ class Personaje {
         return this._hp;
     }
 
+    static getEquipo(): number {
+        return Personaje.equipo;
+    }
+
 }
 
 const personaje = new Personaje(1, "Andy", 1, 100);
 personaje.cambiarHP(-10);
-console.log(personaje); 
+
+
+const personaje1 = new Personaje(2, "Chanchito", 1, 120);
+Personaje.aggregarPersonaje();
+console.log(Personaje.getEquipo());
