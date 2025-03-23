@@ -239,3 +239,32 @@
 // }
 
 //  POO
+class Personaje {
+    profesion?: string // ? opcional
+    constructor(
+        public readonly id: number,
+        public name: string,
+        public level: number,
+        private _hp: number) {
+    }
+
+    subirNivel(): number {
+        this.level++;
+        return this.level;
+    }
+
+    cambiarHP(cantidad: number): number {
+        this._hp += cantidad;
+        // no pasar del maximo
+        return this._hp;
+    }
+
+    get hp(): number {
+        return this._hp;
+    }
+
+}
+
+const personaje = new Personaje(1, "Andy", 1, 100);
+personaje.cambiarHP(-10);
+console.log(personaje); 
