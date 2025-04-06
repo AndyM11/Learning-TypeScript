@@ -29,6 +29,7 @@ class Cerdo implements Animal {
     }
 }
 
+
 class Perro implements Animal {
     name: string = "Fido";
 
@@ -41,12 +42,13 @@ class Perro implements Animal {
     }
 }
 
+
 class DiccionarioUsuarios {
     [id: string]: string;
 }
 
 let diccionarioUsuarios = new DiccionarioUsuarios();
 diccionarioUsuarios['1a'] = "usuario1"
-diccionarioUsuarios['2b'] = "usuario2"
+diccionarioUsuarios['a1'] = "usuario2"
 
-console.log(DiccionarioUsuarios);
+console.log(diccionarioUsuarios);
